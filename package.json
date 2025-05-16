@@ -21,7 +21,10 @@
   },
   "wireit": {
     "build": {
-      "command": "npx tsc -b"
+      "command": "tsc -b",
+      "files": [
+        "**/*.ts"
+      ]
     }
   }
 }
