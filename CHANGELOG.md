@@ -1,5 +1,11 @@
 # z-changeset-practice
 
+## 0.1.1
+
+### Patch Changes
+
+- 74a5deb: remove missed gitignore
+
 ## 0.1.0
 
 ### Minor Changes
