@@ -5,4 +5,5 @@ node_modules
 .cache
 
 # Build artifacts
-index.js
+*.js
+*.js.map
