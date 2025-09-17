@@ -8,7 +8,7 @@ export default async function(eleventyConfig) {
     jsTruthy: true,
     dynamicPartials: true,
     strictFilters: false,
-    extensions: [".liquid, .html"],
+    extensions: [".liquid", ".html"],
     root: ["./docs"],
   };
 
