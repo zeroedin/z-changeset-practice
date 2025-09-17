@@ -1,3 +1,6 @@
+# Build
+_site
+
 # Deps
 node_modules
 .wireit
@@ -5,5 +8,5 @@ node_modules
 .cache
 
 # Build artifacts
-*.js
-*.js.map
+src/*.js
+src/*.js.map
