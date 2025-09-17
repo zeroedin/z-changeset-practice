@@ -7,7 +7,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "wireit"
+    "build": "wireit",
+    "docs": "wireit",
+    "docs:watch": "wireit"
   },
   "author": "Steven Spriggs <steven.spriggs@gmail.com>",
   "license": "MIT",
@@ -15,8 +17,11 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "type": "module",
   "devDependencies": {
+    "@11ty/eleventy": "^3.1.2",
     "@changesets/cli": "^2.29.4",
+    "liquidjs": "^10.21.1",
     "typescript": "^5.8.3",
     "wireit": "^0.14.12"
   },
@@ -25,6 +30,24 @@
       "command": "tsc -b",
       "files": [
         "**/*.ts"
+      ]
+    },
+    "docs": {
+      "command": "eleventy",
+      "files": [
+        "docs"
+      ],
+      "output": [
+        "_site"
+      ]
+    },
+    "docs:watch": {
+      "command": "eleventy --watch --incremental",
+      "files": [
+        "docs"
+      ],
+      "output": [
+        "_site"
       ]
     }
   }

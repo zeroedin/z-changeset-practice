@@ -1,3 +1,6 @@
+# Build
+_site
+
 # Deps
 node_modules
 .wireit
