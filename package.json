@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "description": "A test project for changeset package",
   "exports": {
-    ".": "./index.js"
+    ".": "./src/index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -29,7 +29,7 @@
     "build": {
       "command": "tsc -b",
       "files": [
-        "**/*.ts"
+        "src/**/*.ts"
       ]
     },
     "docs": {
