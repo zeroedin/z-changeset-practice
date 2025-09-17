@@ -1,5 +1,12 @@
 # z-changeset-practice
 
+## 0.1.2
+
+### Patch Changes
+
+- 8b9eb7b: add documentation
+- 8b9eb7b: update console log to version 0.1.2
+
 ## 0.1.1
 
 ### Patch Changes
