@@ -10,7 +10,19 @@
 
 # For versions like v1.2.3, v2.0.1, etc.
 [[redirects]]
-  from = '/v:major.:minor.:patch/*'
-  to = 'https://release-v:major-:minor-:patch--z-changeset-practice.netlify.app/:splat'
+  from = '/v0.2.3/*'
+  to = 'https://release-v0-2-3--z-changeset-practice.netlify.app/:splat'
   status = 200
   force = true
+
+[[redirects]]
+  from = '/v0.2.2/*'
+  to = 'https://release-v0-2-2--z-changeset-practice.netlify.app/:splat'
+  status = 200
+  force = true
+
+[[redirects]]
+  from = '/v0.2.1/*'
+  to = 'https://release-v0-2-1--z-changeset-practice.netlify.app/:splat'
+  status = 200
+  force = true  
