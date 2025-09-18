@@ -1,5 +1,11 @@
 # z-changeset-practice
 
+## 0.2.2
+
+### Patch Changes
+
+- 9819a2c: update console to 0.2.2
+
 ## 0.2.1
 
 ### Patch Changes
