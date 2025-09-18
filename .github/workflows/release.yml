@@ -48,7 +48,15 @@ jobs:
       - name: Create and push git tag
         run: |
           PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          TAG_NAME="v$PACKAGE_VERSION"
+          
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git tag "v$PACKAGE_VERSION"
-          git push origin "v$PACKAGE_VERSION"
+          
+          # Create tag only if it doesn't exist
+          if ! git tag -l | grep -q "^$TAG_NAME$"; then
+            git tag "$TAG_NAME"
+            git push origin "$TAG_NAME"
+          else
+            echo "Tag $TAG_NAME already exists, skipping..."
+          fi
