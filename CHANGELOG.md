@@ -1,5 +1,11 @@
 # z-changeset-practice
 
+## 0.2.1
+
+### Patch Changes
+
+- f040a01: update changeset to 0.2.1
+
 ## 0.2.0
 
 ### Minor Changes
