@@ -3,6 +3,7 @@ import { Liquid } from "liquidjs";
 export default async function(eleventyConfig) {
 	eleventyConfig.setInputDirectory("docs");
 	eleventyConfig.setOutputDirectory("_site");
+  eleventyConfig.addPassthroughCopy("docs/images/*");
 
   const options = {
     jsTruthy: true,

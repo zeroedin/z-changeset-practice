@@ -42,7 +42,7 @@
       ]
     },
     "docs:watch": {
-      "command": "eleventy --watch --incremental",
+      "command": "eleventy --serve --watch --incremental",
       "files": [
         "docs"
       ],
