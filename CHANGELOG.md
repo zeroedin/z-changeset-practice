@@ -1,5 +1,11 @@
 # z-changeset-practice
 
+## 0.3.0
+
+### Minor Changes
+
+- d658fea: releasing the kraken!
+
 ## 0.2.3
 
 ### Patch Changes
