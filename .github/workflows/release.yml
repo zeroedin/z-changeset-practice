@@ -36,10 +36,23 @@ jobs:
 
       - name: Create release branch
         run: |
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
           TAG_NAME="v$PACKAGE_VERSION"
           RELEASE_BRANCH="release/${TAG_NAME}"
           
-          # Create and push release branch
+          # Check if branch exists and delete it if it does
+          if git show-ref --verify --quiet "refs/heads/$RELEASE_BRANCH"; then
+            echo "Branch $RELEASE_BRANCH already exists, deleting it..."
+            git branch -D "$RELEASE_BRANCH"
+          fi
+          
+          # Check if remote branch exists and delete it if it does
+          if git show-ref --verify --quiet "refs/remotes/origin/$RELEASE_BRANCH"; then
+            echo "Remote branch $RELEASE_BRANCH already exists, deleting it..."
+            git push origin --delete "$RELEASE_BRANCH"
+          fi
+          
+          # Create and push new release branch
           git checkout -b "$RELEASE_BRANCH"
           git push origin "$RELEASE_BRANCH"
           
