@@ -34,3 +34,23 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+  # Add this new job after the existing release job
+  create-release-branch:
+    needs: release
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/')
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Fetch full history for proper branching
+      
+      - name: Create release branch
+        run: |
+          TAG_NAME=${GITHUB_REF#refs/tags/}
+          RELEASE_BRANCH="release/${TAG_NAME}"
+          
+          # Create and push release branch
+          git checkout -b "$RELEASE_BRANCH"
+          git push origin "$RELEASE_BRANCH"
+          
+          echo "Created release branch: $RELEASE_BRANCH"
