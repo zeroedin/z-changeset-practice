@@ -1,2 +1,16 @@
 [build]
   command = "npm run docs"
+
+# Add branch deployment settings
+[context."release/*"]
+  command = "npm run docs"
+
+[context."staging/*"]
+  command = "npm run docs"
+
+# For versions like v1.2.3, v2.0.1, etc.
+[[redirects]]
+  from = '/v:major.:minor.:patch/*'
+  to = 'https://release-v:major-:minor-:patch--z-changeset-practice.netlify.app/:splat'
+  status = 200
+  force = true
