@@ -1,5 +1,12 @@
 # z-changeset-practice
 
+## 0.2.0
+
+### Minor Changes
+
+- 8ebf3a0: updated the console log to display v0.2.0
+- ce163f8: updating to 0.2.0
+
 ## 0.1.2
 
 ### Patch Changes
