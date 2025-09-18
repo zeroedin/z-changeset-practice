@@ -33,30 +33,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-  create-tag:
-    needs: release
-    if: github.repository == 'zeroedin/z-changeset-practice'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/setup-node@v3
-        with:
-          node-version-file: .nvmrc
-      - run: npm ci --prefer-offline
-      - name: Create and push git tag
+
+      - name: Create release branch
         run: |
-          PACKAGE_VERSION=$(node -p "require('./package.json').version")
           TAG_NAME="v$PACKAGE_VERSION"
+          RELEASE_BRANCH="release/${TAG_NAME}"
           
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # Create and push release branch
+          git checkout -b "$RELEASE_BRANCH"
+          git push origin "$RELEASE_BRANCH"
           
-          # Create tag only if it doesn't exist
-          if ! git tag -l | grep -q "^$TAG_NAME$"; then
-            git tag "$TAG_NAME"
-            git push origin "$TAG_NAME"
-          else
-            echo "Tag $TAG_NAME already exists, skipping..."
-          fi
+          echo "Created release branch: $RELEASE_BRANCH"
