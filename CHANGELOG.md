@@ -1,5 +1,11 @@
 # z-changeset-practice
 
+## 0.4.1
+
+### Patch Changes
+
+- 62c23a6: updating to 0.4.1
+
 ## 0.4.0
 
 ### Minor Changes
