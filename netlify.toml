@@ -10,6 +10,12 @@
 
 # For versions like v1.2.3, v2.0.1, etc.
 [[redirects]]
+  from = '/v1.0.0/*'
+  to = 'https://release-v1-0-0--z-changeset-practice.netlify.app/:splat'
+  status = 200
+  force = true
+
+[[redirects]]
   from = '/v0.4.1/*'
   to = 'https://release-v0-4-1--z-changeset-practice.netlify.app/:splat'
   status = 200
@@ -22,6 +28,6 @@
   force = true
 
 [[headers]]
-  for = "/scripts/version=loader.js" # you can configure the correct paths here
+  for = "/scripts/version-loader.js" # you can configure the correct paths here
   [headers.values]
     access-control-allow-origin = "*"
