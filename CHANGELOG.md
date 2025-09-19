@@ -1,5 +1,11 @@
 # z-changeset-practice
 
+## 1.0.0
+
+### Major Changes
+
+- 0087828: VERSION 1.0 BABY. OOH YEAH RELEASE THE KRAKEN!
+
 ## 0.4.1
 
 ### Patch Changes
