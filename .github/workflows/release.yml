@@ -41,10 +41,11 @@ jobs:
           RELEASE_BRANCH="release/${TAG_NAME}"
           
           # Check if branch exists on GitHub
-          gh api repos/:owner/:repo/branches/$RELEASE_BRANCH >/dev/null 2>&1
-          if [ $? -eq 0 ]; then
-            echo "Branch exists on GitHub, deleting..."
-            gh api -X DELETE repos/:owner/:repo/git/refs/heads/$RELEASE_BRANCH
+          if gh api repos/:owner/:repo/branches/$RELEASE_BRANCH >/dev/null 2>&1
+            if [ $? -eq 0 ]; then
+              echo "Branch exists on GitHub, deleting..."
+              gh api -X DELETE repos/:owner/:repo/git/refs/heads/$RELEASE_BRANCH
+            fi
           fi
           
           # Create and push new release branch
