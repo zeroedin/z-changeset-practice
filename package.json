@@ -1,6 +1,6 @@
 {
   "name": "z-changeset-practice",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A test project for changeset package",
   "exports": {
     ".": "./src/index.js"
