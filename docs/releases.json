@@ -1,0 +1,41 @@
+{
+  "releases": [
+    {
+      "version": "v0.0.2",
+      "url": "https://z-changeset-practice.netlify.app/v0.0.2/"
+    },
+    {
+      "version": "v0.1.0",
+      "url": "https://z-changeset-practice.netlify.app/v0.1.0/"
+    },
+    {
+      "version": "v0.1.1",
+      "url": "https://z-changeset-practice.netlify.app/v0.1.1/"
+    },
+    {
+      "version": "v0.1.2",
+      "url": "https://z-changeset-practice.netlify.app/v0.1.2/"
+    },
+    {
+      "version": "v0.2.0",
+      "url": "https://z-changeset-practice.netlify.app/v0.2.0/"
+    },
+    {
+      "version": "v0.2.1",
+      "url": "https://z-changeset-practice.netlify.app/v0.2.1/"
+    },
+    {
+      "version": "v0.2.2",
+      "url": "https://z-changeset-practice.netlify.app/v0.2.2/"
+    },
+    {
+      "version": "v0.2.3",
+      "url": "https://z-changeset-practice.netlify.app/v0.2.3/"
+    },
+    {
+      "version": "v0.3.0",
+      "url": "https://z-changeset-practice.netlify.app/v0.3.0/"
+    }
+  ],
+  "generatedAt": "2025-09-19T14:37:11.839Z"
+}

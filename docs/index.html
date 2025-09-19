@@ -6,20 +6,24 @@
     <title>Learning to release versioned documentation</title>
 </head>
 <body>
-    <h1>Hello World</h1>
-    <p>Current version: {{ pkg.version }}</p>
+  <h1>Hello World</h1>
+  <p>Current version: {{ pkg.version }}</p>
 
-    <img src="images/kraken.png" alt="Kraken">
+  <img src="images/kraken.png" alt="Kraken">
 
-    <p>Past versions:</p>
-    <ul>
-        <li><a href="/v0.3.0/">v0.3.0 🦑</a></li>
-        <li><a href="/v0.2.3/">v0.2.3</a></li>
-        <li><a href="/v0.2.2/">v0.2.2</a></li>
-        <li><a href="/v0.2.1/">v0.2.1</a></li>
-        <li><a href="/v0.2.0/">v0.2.0</a></li>
-        <li><a href="/v0.1.2/">v0.1.2</a></li>
-        <li><a href="/v0.1.1/">v0.1.1</a></li>
-    </ul>
+  <div id="version-list">
+    <h2>Past versions:</h2>
+  </div>
+
+  <!-- Load from an absolute path in production, so as to always get the latest version -->
+  <script type="module">
+    {% if env == "dev" %}
+      import { loadVersions } from '/scripts/version-loader.js';
+      loadVersions('/releases.json','version-list');
+    {% else %}
+      import { loadVersions } from 'https://z-changeset-practice.netlify.app/scripts/version-loader.js';
+      loadVersions('https://z-changeset-practice.netlify.app/releases.json','version-list');
+    {% endif %}
+  </script>
 </body>
 </html>
