@@ -1,1 +1,1 @@
-{"root":["./index.ts"],"version":"5.8.3"}
+{"root":["./src/index.ts","./scripts/generate-releases-data.ts","./docs/scripts/version-loader.ts"],"version":"5.8.3"}

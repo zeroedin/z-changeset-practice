@@ -8,5 +8,7 @@ node_modules
 .cache
 
 # Build artifacts
-src/*.js
-src/*.js.map
+**/*.js
+**/*.js.map
+**/*.d.ts
+**/*.d.ts.map

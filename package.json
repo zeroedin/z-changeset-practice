@@ -22,6 +22,8 @@
     "@11ty/eleventy": "^3.1.2",
     "@changesets/cli": "^2.29.4",
     "liquidjs": "^10.21.1",
+    "ts-patch": "^3.3.0",
+    "tsx": "^4.19.2",
     "typescript": "^5.8.3",
     "wireit": "^0.14.12"
   },
@@ -32,22 +34,48 @@
         "src/**/*.ts"
       ]
     },
+    "generate-releases-data": {
+      "command": "tsx scripts/generate-releases-data.ts",
+      "files": [
+        ".git/refs/tags"
+      ],
+      "output": [
+        "_site/releases.json"
+      ]
+    },
+    "compile": {
+      "command": "tspc -b",
+      "files": [
+        "docs/**/*.ts"
+      ],
+      "output": [
+        "docs/**/*.js"
+      ]
+    },
     "docs": {
-      "command": "eleventy",
+      "command": "ELEVENTY_ENV=prod eleventy",
       "files": [
         "docs"
       ],
       "output": [
         "_site"
+      ],
+      "dependencies": [
+        "generate-releases-data",
+        "compile"
       ]
     },
     "docs:watch": {
-      "command": "eleventy --serve --watch --incremental",
+      "command": "ELEVENTY_ENV=dev eleventy --serve --watch --incremental",
       "files": [
         "docs"
       ],
       "output": [
         "_site"
+      ],
+      "dependencies": [
+        "generate-releases-data",
+        "compile"
       ]
     }
   }

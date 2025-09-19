@@ -1,1 +1,1 @@
-console.log('v0.3.0');
+console.log('v0.4.0');

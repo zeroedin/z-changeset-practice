@@ -1,7 +1,74 @@
 {
   "compilerOptions": {
-    "module": "esnext",
-    "sourceMap": true
+    // Target and Module
+    "target": "es2020",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "lib": [
+      "DOM.iterable",
+      "DOM",
+      "ES5",
+      "ES6",
+      "ES2020",
+      "ES2022",
+      "ES2024",
+      "ES2015.Generator",
+      "ESNext.Collection",
+      "ESNext.Array",
+      "ESNext.Iterator",
+      "ESNext.AsyncIterable",
+      "ESNext.Disposable",
+      "ScriptHost"
+    ],
+    
+    // Output
+
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    
+    // Strict Type Checking (strict: true enables most of these, but being explicit)
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    
+    // Additional Checks
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "exactOptionalPropertyTypes": true,
+    "useUnknownInCatchVariables": true,
+    
+    // Module Resolution
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    
+    // Emit
+    "importHelpers": true,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noEmitOnError": true,
+    "skipLibCheck": true,
+
   },
-  "include": ["**/*.ts"]
+  "include": [
+    "src/**/*",
+    "scripts/**/*",
+    "docs/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "_site",
+    "**/*.test.ts",
+    "**/*.spec.ts"
+  ],
+  "ts-node": {
+    "esm": true
+  }
 }
