@@ -1,5 +1,11 @@
 # z-changeset-practice
 
+## 0.4.0
+
+### Minor Changes
+
+- 946dbb6: console update to 0.4.0
+
 ## 0.3.0
 
 ### Minor Changes
