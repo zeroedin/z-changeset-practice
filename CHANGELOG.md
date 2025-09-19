@@ -1,5 +1,11 @@
 # z-changeset-practice
 
+## 1.0.1
+
+### Patch Changes
+
+- 0e52813: bumped console to 1.0.1
+
 ## 1.0.0
 
 ### Major Changes
