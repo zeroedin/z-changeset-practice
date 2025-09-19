@@ -28,6 +28,6 @@
   force = true
 
 [[headers]]
-  for = "/scripts/version=loader.js" # you can configure the correct paths here
+  for = "/scripts/version-loader.js" # you can configure the correct paths here
   [headers.values]
     access-control-allow-origin = "*"
